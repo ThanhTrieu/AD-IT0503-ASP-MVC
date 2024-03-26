@@ -26,4 +26,8 @@
     <Folder Include="wwwroot\uploads\images\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="TrainingFPTCo.sln" />
+  </ItemGroup>
+
 </Project>
