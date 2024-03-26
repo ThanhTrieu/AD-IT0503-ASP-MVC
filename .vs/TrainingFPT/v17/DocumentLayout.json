@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\setup\\CSharp\\TrainingFPT\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D6BF7BA1-D60B-4729-9A37-48BBA4BA4D83}|TrainingFPT\\TrainingFPT.csproj|c:\\setup\\csharp\\trainingfpt\\trainingfpt\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6BF7BA1-D60B-4729-9A37-48BBA4BA4D83}|TrainingFPT\\TrainingFPT.csproj|solutionrelative:trainingfpt\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Database.cs",
+              "DocumentMoniker": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\Database.cs",
+              "RelativeDocumentMoniker": "TrainingFPT\\Database.cs",
+              "ToolTip": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\Database.cs",
+              "RelativeToolTip": "TrainingFPT\\Database.cs",
+              "ViewState": "AQIAAAAAAADAzMzMzMwmwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T08:58:07.457Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
