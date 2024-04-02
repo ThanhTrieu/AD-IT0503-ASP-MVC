@@ -4,15 +4,100 @@ namespace TrainingFPT.Models.Queries
 {
     public class CourseQuery
     {
-
-        public List<CourseDetail> GetAllDataCourses()
+        public bool DeleteCourseById(int id)
         {
+            bool checkingDelete = false;
+            using (SqlConnection connection = Database.GetSqlConnection())
+            {
+                string sql = "UPDATE [Courses] SET [DeletedAt] = @DeletedAt WHERE [Id] = @id";
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@DeletedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+                checkingDelete = true;
+                connection.Close();
+            }
+            return checkingDelete;
+        }
+
+        public bool UpdateCourseById(
+            string nameCourse,
+            int categoryId,
+            string? description,
+            string image,
+            string status,
+            DateTime startDate,
+            DateTime? endDate,
+            int id
+        )
+        {
+            bool checkingUpdate = false;
+            string valEndate = DBNull.Value.ToString();
+            if (endDate != null)
+            {
+                valEndate = endDate.Value.ToString();
+            }
+
+            using (SqlConnection connection = Database.GetSqlConnection())
+            {
+                string sql = "UPDATE [Courses] SET [CategoryId] = @CategoryId, [NameCourse] = @NameCourse, [Description] = @Description, [Image] = @Image, [Status] = @Status, [StartDate] = @StartDate, [EndDate] = @EndDate, [UpdatedAt] = @UpdatedAt WHERE [Id] = @id AND [DeletedAt] IS NULL";
+                connection.Open();
+                SqlCommand cmd = new SqlCommand( sql, connection );
+                cmd.Parameters.AddWithValue("@CategoryId", categoryId);
+                cmd.Parameters.AddWithValue("@NameCourse", nameCourse);
+                cmd.Parameters.AddWithValue("@Description", description ?? DBNull.Value.ToString());
+                cmd.Parameters.AddWithValue("@Image", image ?? DBNull.Value.ToString());
+                cmd.Parameters.AddWithValue("@Status", status);
+                cmd.Parameters.AddWithValue("@StartDate", startDate);
+                cmd.Parameters.AddWithValue("@EndDate", valEndate);
+                cmd.Parameters.AddWithValue("UpdatedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+                checkingUpdate = true;
+                connection.Close();
+            }
+            return checkingUpdate;
+        }
+        public CourseDetail GetDetailCourseById(int id)
+        {
+            CourseDetail course = new CourseDetail();
+            using (SqlConnection connection = Database.GetSqlConnection())
+            {
+                string sql = "SELECT * FROM [Courses] WHERE [Id] = @id AND [DeletedAt] IS NULL";
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@id", id);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        course.Id = Convert.ToInt32(reader["Id"]);
+                        course.NameCourse = reader["NameCourse"].ToString();
+                        course.CategoryId = Convert.ToInt32(reader["CategoryId"]);
+                        course.Description = reader["Description"].ToString();
+                        course.StartDate = Convert.ToDateTime(reader["StartDate"]);
+                        course.EndDate = Convert.ToDateTime(reader["EndDate"]);
+                        course.Status = reader["Status"].ToString();
+                        course.ViewImageCouser = reader["Image"].ToString();
+                    }
+                }
+                connection.Close();
+            }
+            return course;
+        }
+        public List<CourseDetail> GetAllDataCourses(string? keyword)
+        {
+            string search = "%"+keyword+"%";
             List<CourseDetail> courses = new List<CourseDetail>();
             using (SqlConnection connection = Database.GetSqlConnection())
             {
-                string sql = "SELECT [co].*, [ca].[Name] FROM [Courses] AS [co] INNER JOIN [Categories] AS [ca] ON [co].[CategoryId] = [ca].[Id] WHERE [co].[DeletedAt] IS NULL";
+                string sql = "SELECT [co].*, CONVERT(VARCHAR(50), [co].[StartDate], 101) AS ViewStartDate,  CONVERT(VARCHAR(50), [co].[EndDate], 101) AS ViewEndDate, [ca].[Name] FROM [Courses] AS [co] INNER JOIN [Categories] AS [ca] ON [co].[CategoryId] = [ca].[Id] WHERE ([co].[NameCourse] LIKE @NameCourse OR [ca].[Name] LIKE @NameCategory OR [co].[Description] LIKE @Description) AND [co].[DeletedAt] IS NULL";
                 connection.Open();
                 SqlCommand cmd = new SqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@NameCourse", search ?? DBNull.Value.ToString());
+                cmd.Parameters.AddWithValue("@NameCategory", search ?? DBNull.Value.ToString());
+                cmd.Parameters.AddWithValue("@Description", search ?? DBNull.Value.ToString());
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -27,6 +112,8 @@ namespace TrainingFPT.Models.Queries
                         detail.ViewImageCouser = reader["Image"].ToString();
                         detail.Status = reader["Status"].ToString();
                         detail.viewCategoryName = reader["Name"].ToString();
+                        detail.ViewStartDate = reader["ViewStartDate"].ToString();
+                        detail.ViewEndDate = reader["ViewEndDate"].ToString();
                         courses.Add(detail);
                     }
                 }

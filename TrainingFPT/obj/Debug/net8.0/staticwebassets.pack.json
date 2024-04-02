@@ -7665,6 +7665,10 @@
       "PackagePath": "staticwebassets\\training\\vendor\\jquery\\jquery.slim.min.map"
     },
     {
+      "Id": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\wwwroot\\uploads\\images\\18fb1005-a4a9-4817-8178-25bf90a8df0c-2024-04-02.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\18fb1005-a4a9-4817-8178-25bf90a8df0c-2024-04-02.jpg"
+    },
+    {
       "Id": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\wwwroot\\uploads\\images\\28ee5682-6436-4bb2-a91e-4f86c5bfaa60-2024-03-26.jpg",
       "PackagePath": "staticwebassets\\uploads\\images\\28ee5682-6436-4bb2-a91e-4f86c5bfaa60-2024-03-26.jpg"
     },
@@ -7677,12 +7681,20 @@
       "PackagePath": "staticwebassets\\uploads\\images\\40317784-e8f6-4d30-aa59-91d76a6563d9-2024-03-12.jpg"
     },
     {
+      "Id": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\wwwroot\\uploads\\images\\411dd5cb-c2ba-4a6d-a475-f8dd7f855d90-2024-04-02.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\411dd5cb-c2ba-4a6d-a475-f8dd7f855d90-2024-04-02.jpg"
+    },
+    {
       "Id": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\wwwroot\\uploads\\images\\54c89a04-b29c-4280-af8e-c6d2256447b4-2024-03-12.jpg",
       "PackagePath": "staticwebassets\\uploads\\images\\54c89a04-b29c-4280-af8e-c6d2256447b4-2024-03-12.jpg"
     },
     {
       "Id": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\wwwroot\\uploads\\images\\820db0b3-62aa-49d7-b538-d10907735343-2024-03-26.jpg",
       "PackagePath": "staticwebassets\\uploads\\images\\820db0b3-62aa-49d7-b538-d10907735343-2024-03-26.jpg"
+    },
+    {
+      "Id": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\wwwroot\\uploads\\images\\8d4e56e3-b750-4937-bd49-c32b69fa1570-2024-03-26.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\8d4e56e3-b750-4937-bd49-c32b69fa1570-2024-03-26.jpg"
     },
     {
       "Id": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\wwwroot\\uploads\\images\\8e9c37f1-ee7a-48ab-9c32-d79467bb1110-2024-03-12.jpg",

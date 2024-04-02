@@ -28,6 +28,9 @@ namespace TrainingFPT.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? EndDate { get; set; }
 
+        public string? ViewStartDate { get; set; }
+        public string? ViewEndDate { get; set; }
+
         [Required(ErrorMessage = "Choose file image, please")]
         [AllowExtensionFile(new string[] { ".png", ".jpg", ".jpeg", ".gif" })]
         [AllowMaxSizeFile(5 * 1024 * 1024)]

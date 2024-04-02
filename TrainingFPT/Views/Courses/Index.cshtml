@@ -11,11 +11,22 @@
 
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
 
-    bool saveStatus = Convert.ToBoolean(TempData["saveStatus"]);
+    bool saveStatus   = Convert.ToBoolean(TempData["saveStatus"]);
+    bool updateStatus = Convert.ToBoolean(TempData["updateStatus"]);
+    bool deleteStatus = Convert.ToBoolean(TempData["deleteStatus"]);
 }
 <div class="row">
     <div class="col-sm-12 col-md-12">
         <a class="btn btn-primary" href="@Url.Action("Add", "Courses")"> Add Course + </a>
+        <form class="my-3" method="get" asp-action="Index">
+            <div class="form-group mb-3">
+                <label> Search by : </label>
+                <input type="text" name="search" value="@ViewBag.keyword" />
+                <button class="btn btn-sm btn-primary mb-0" type="submit">Search</button>
+                <a class="btn btn-sm btn-info mb-0 ml-2" asp-action="Index">Back to lists</a>
+            </div>
+        </form>
+        
         @if (TempData["saveStatus"] != null)
         {
             @if (saveStatus)
@@ -31,6 +42,36 @@
                 </div>
             }
         }
+        @if (TempData["updateStatus"] != null)
+        {
+            @if (updateStatus)
+            {
+                <div class="text-success my-3 text-center">
+                    Update Course successfully
+                </div>
+            }
+            else
+            {
+                <div class="text-danger my-3 text-center">
+                    Update Course failure
+                </div>
+            }
+        }
+        @if (TempData["deleteStatus"] != null)
+        {
+            @if (deleteStatus)
+            {
+                <div class="text-success my-3 text-center">
+                    Delete Course successfully
+                </div>
+            }
+            else
+            {
+                <div class="text-danger my-3 text-center">
+                    Delete Course failure
+                </div>
+            }
+        }
         <table class="my-3 table table-bordered table-striped">
             <thead class="table-primary">
                 <tr>
@@ -42,6 +83,7 @@
                     <th>Start date</th>
                     <th>End date</th>
                     <th>Status</th>
+                    <th colspan="2" width="8%" class="text-center">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -55,9 +97,15 @@
                             <img class="img-fluid" alt="@item.NameCourse" src="/uploads/images/@item.ViewImageCouser" />
                         </td>
                         <td>@item.Description</td>
-                        <td>@item.StartDate</td>
-                        <td>@item.EndDate</td>
+                        <td>@item.ViewStartDate</td>
+                        <td>@item.ViewEndDate</td>
                         <td>@item.Status</td>
+                        <td>
+                            <a class="btn btn-info btn-sm mb-0" href="@Url.Action("Update", "Courses", new { id = @item.Id })">Edit</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger btn-sm mb-0" href="@Url.Action("Delete", "Courses", new { id = @item.Id })">Delete</a>
+                        </td>
                     </tr>
                 }
             </tbody>

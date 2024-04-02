@@ -51,7 +51,7 @@ namespace TrainingFPT.Controllers
             {
                 // khong co loi tu phia nguoi dung
                 // upload file va lay dc ten file save database
-                string filePosterImage = UploadFileHelper.UploadFile(PosterImage);
+                string filePosterImage = UploadFileHelper.UploadFile(PosterImage, "images");
                 try
                 {
                     int idInsetCate = new CategoryQuery().InsertItemCategory(category.Name, category.Description, filePosterImage, category.Status);
@@ -107,7 +107,7 @@ namespace TrainingFPT.Controllers
                 if (categoryDetail.PosterImage != null)
                 {
                     // co muon thay doi anh
-                    uniquePosterImage = UploadFileHelper.UploadFile(PosterImage);
+                    uniquePosterImage = UploadFileHelper.UploadFile(PosterImage, "images");
                 }
                 bool update = new CategoryQuery().UpdateCategoryById(
                     categoryDetail.Name,

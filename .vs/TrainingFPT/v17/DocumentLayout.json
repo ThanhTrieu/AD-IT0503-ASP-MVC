@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\setup\\CSharp\\TrainingFPT\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D6BF7BA1-D60B-4729-9A37-48BBA4BA4D83}|TrainingFPT\\TrainingFPT.csproj|c:\\setup\\csharp\\trainingfpt\\trainingfpt\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6BF7BA1-D60B-4729-9A37-48BBA4BA4D83}|TrainingFPT\\TrainingFPT.csproj|solutionrelative:trainingfpt\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D6BF7BA1-D60B-4729-9A37-48BBA4BA4D83}|TrainingFPT\\TrainingFPT.csproj|c:\\setup\\csharp\\trainingfpt\\trainingfpt\\models\\queries\\coursequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6BF7BA1-D60B-4729-9A37-48BBA4BA4D83}|TrainingFPT\\TrainingFPT.csproj|solutionrelative:trainingfpt\\models\\queries\\coursequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6BF7BA1-D60B-4729-9A37-48BBA4BA4D83}|TrainingFPT\\TrainingFPT.csproj|c:\\setup\\csharp\\trainingfpt\\trainingfpt\\views\\courses\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D6BF7BA1-D60B-4729-9A37-48BBA4BA4D83}|TrainingFPT\\TrainingFPT.csproj|solutionrelative:trainingfpt\\views\\courses\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6BF7BA1-D60B-4729-9A37-48BBA4BA4D83}|TrainingFPT\\TrainingFPT.csproj|c:\\setup\\csharp\\trainingfpt\\trainingfpt\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6BF7BA1-D60B-4729-9A37-48BBA4BA4D83}|TrainingFPT\\TrainingFPT.csproj|solutionrelative:trainingfpt\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Database.cs",
-              "DocumentMoniker": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\Database.cs",
-              "RelativeDocumentMoniker": "TrainingFPT\\Database.cs",
-              "ToolTip": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\Database.cs",
-              "RelativeToolTip": "TrainingFPT\\Database.cs",
-              "ViewState": "AQIAAAAAAADAzMzMzMwmwAAAAAAAAAAA",
+              "Title": "CourseQuery.cs",
+              "DocumentMoniker": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\Models\\Queries\\CourseQuery.cs",
+              "RelativeDocumentMoniker": "TrainingFPT\\Models\\Queries\\CourseQuery.cs",
+              "ToolTip": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\Models\\Queries\\CourseQuery.cs",
+              "RelativeToolTip": "TrainingFPT\\Models\\Queries\\CourseQuery.cs",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAAAF0AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T08:58:07.457Z",
+              "WhenOpened": "2024-04-02T05:31:14.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CoursesController.cs",
+              "DocumentMoniker": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\Controllers\\CoursesController.cs",
+              "RelativeDocumentMoniker": "TrainingFPT\\Controllers\\CoursesController.cs",
+              "ToolTip": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\Controllers\\CoursesController.cs",
+              "RelativeToolTip": "TrainingFPT\\Controllers\\CoursesController.cs",
+              "ViewState": "AQIAABgAAAAAMzMzMzMXwCEAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T05:28:29.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\Views\\Courses\\Index.cshtml",
+              "RelativeDocumentMoniker": "TrainingFPT\\Views\\Courses\\Index.cshtml",
+              "ToolTip": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\Views\\Courses\\Index.cshtml",
+              "RelativeToolTip": "TrainingFPT\\Views\\Courses\\Index.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAqwBEAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-02T05:17:54Z",
               "EditorCaption": ""
             }
           ]

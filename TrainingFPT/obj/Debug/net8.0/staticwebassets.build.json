@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GmhCfvBSCTeyULGnIJRV86qr7fhdNlXlA7/T23vgQsA=",
+  "Hash": "a85967QtaOI/1hCQuKGISYkcJnROJbVGNN6wjWyiQ4s=",
   "Source": "TrainingFPT",
   "BasePath": "_content/TrainingFPT",
   "Mode": "Default",
@@ -36440,6 +36440,25 @@
       "OriginalItemSpec": "wwwroot\\training\\vendor\\jquery-easing\\jquery.easing.min.js"
     },
     {
+      "Identity": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\wwwroot\\uploads\\images\\18fb1005-a4a9-4817-8178-25bf90a8df0c-2024-04-02.jpg",
+      "SourceId": "TrainingFPT",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\wwwroot\\",
+      "BasePath": "_content/TrainingFPT",
+      "RelativePath": "uploads/images/18fb1005-a4a9-4817-8178-25bf90a8df0c-2024-04-02.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\images\\18fb1005-a4a9-4817-8178-25bf90a8df0c-2024-04-02.jpg"
+    },
+    {
       "Identity": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\wwwroot\\uploads\\images\\28ee5682-6436-4bb2-a91e-4f86c5bfaa60-2024-03-26.jpg",
       "SourceId": "TrainingFPT",
       "SourceType": "Discovered",
@@ -36497,6 +36516,25 @@
       "OriginalItemSpec": "wwwroot\\uploads\\images\\40317784-e8f6-4d30-aa59-91d76a6563d9-2024-03-12.jpg"
     },
     {
+      "Identity": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\wwwroot\\uploads\\images\\411dd5cb-c2ba-4a6d-a475-f8dd7f855d90-2024-04-02.jpg",
+      "SourceId": "TrainingFPT",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\wwwroot\\",
+      "BasePath": "_content/TrainingFPT",
+      "RelativePath": "uploads/images/411dd5cb-c2ba-4a6d-a475-f8dd7f855d90-2024-04-02.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\images\\411dd5cb-c2ba-4a6d-a475-f8dd7f855d90-2024-04-02.jpg"
+    },
+    {
       "Identity": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\wwwroot\\uploads\\images\\54c89a04-b29c-4280-af8e-c6d2256447b4-2024-03-12.jpg",
       "SourceId": "TrainingFPT",
       "SourceType": "Discovered",
@@ -36533,6 +36571,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\images\\820db0b3-62aa-49d7-b538-d10907735343-2024-03-26.jpg"
+    },
+    {
+      "Identity": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\wwwroot\\uploads\\images\\8d4e56e3-b750-4937-bd49-c32b69fa1570-2024-03-26.jpg",
+      "SourceId": "TrainingFPT",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\wwwroot\\",
+      "BasePath": "_content/TrainingFPT",
+      "RelativePath": "uploads/images/8d4e56e3-b750-4937-bd49-c32b69fa1570-2024-03-26.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\images\\8d4e56e3-b750-4937-bd49-c32b69fa1570-2024-03-26.jpg"
     },
     {
       "Identity": "C:\\setup\\CSharp\\TrainingFPT\\TrainingFPT\\wwwroot\\uploads\\images\\8e9c37f1-ee7a-48ab-9c32-d79467bb1110-2024-03-12.jpg",

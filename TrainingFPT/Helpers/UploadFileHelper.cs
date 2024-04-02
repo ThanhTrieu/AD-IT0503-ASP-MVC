@@ -2,13 +2,27 @@
 {
     public static class UploadFileHelper
     {
-        public static string UploadFile(IFormFile file)
+        public static string UploadFile(IFormFile file, string? nameFolder)
         {
             string uniqueFileName = string.Empty;
             try
             {
-                string pathUploadServer = "wwwroot\\uploads\\images";
-
+                string pathUploadServer = string.Empty;
+                switch (nameFolder)
+                {
+                    case "images":
+                        pathUploadServer = "wwwroot\\uploads\\images";
+                        break;
+                    case "videos":
+                        pathUploadServer = "wwwroot\\uploads\\videos";
+                        break;
+                    case "documents":
+                        pathUploadServer = "wwwroot\\uploads\\documents";
+                        break;
+                    default:
+                        pathUploadServer = "wwwroot\\uploads\\images";
+                        break;
+                }
                 string extension = Path.GetExtension(file.FileName);
                 string uniqueStr = Guid.NewGuid().ToString();
                 string time = DateTime.Now.ToString("yyyy-MM-dd");

@@ -9,11 +9,11 @@ namespace TrainingFPT.Controllers
     public class CoursesController : Controller
     {
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(string? search)
         {
             CoursesViewModel course = new CoursesViewModel();
             course.CourseDetailList = new List<CourseDetail>();
-            var dataCourses = new CourseQuery().GetAllDataCourses();
+            var dataCourses = new CourseQuery().GetAllDataCourses(search);
             foreach (var data in dataCourses)
             {
                 course.CourseDetailList.Add(new CourseDetail
@@ -26,9 +26,12 @@ namespace TrainingFPT.Controllers
                     StartDate = data.StartDate,
                     EndDate = data.EndDate,
                     ViewImageCouser = data.ViewImageCouser,
-                    viewCategoryName = data.viewCategoryName
+                    viewCategoryName = data.viewCategoryName,
+                    ViewStartDate = data.ViewStartDate,
+                    ViewEndDate = data.ViewEndDate
                 });
             }
+            ViewBag.keyword = search;
             return View(course);
         }
 
@@ -59,7 +62,7 @@ namespace TrainingFPT.Controllers
                 try
                 {
                     //return Ok(course);
-                    string imageCourse = UploadFileHelper.UploadFile(Image);
+                    string imageCourse = UploadFileHelper.UploadFile(Image, "images");
                     int idCourse = new CourseQuery().InsetDataCourse(
                         course.NameCourse,
                         course.CategoryId,
@@ -97,6 +100,91 @@ namespace TrainingFPT.Controllers
             }
             ViewBag.Categories = items;
             return View(course);
+        }
+
+        [HttpGet]
+        public IActionResult Update(int id = 0)
+        {
+
+            CourseDetail detail = new CourseQuery().GetDetailCourseById(id);
+            List<SelectListItem> items = new List<SelectListItem>();
+            var dataCategories = new CategoryQuery().GetAllCategories(null, null);
+            foreach (var category in dataCategories)
+            {
+                items.Add(new SelectListItem
+                {
+                    Value = category.Id.ToString(),
+                    Text = category.Name
+                });
+            }
+            ViewBag.Categories = items;
+            return View(detail);
+        }
+
+        [HttpPost]
+        public IActionResult Update(CourseDetail courseDetail, IFormFile Image)
+        {
+            try
+            {
+                var infoCourse = new CourseQuery().GetDetailCourseById(courseDetail.Id);
+                string imageCourse = infoCourse.ViewImageCouser;
+                // kiem tra xe nguoi co muon thay doi anh ko?
+                if (courseDetail.Image != null)
+                {
+                    // co thay doi anh
+                    imageCourse = UploadFileHelper.UploadFile(Image, "images");
+                }
+                bool update = new CourseQuery().UpdateCourseById(
+                                courseDetail.NameCourse,
+                                courseDetail.CategoryId,
+                                courseDetail.Description,
+                                imageCourse,
+                                courseDetail.Status,
+                                courseDetail.StartDate,
+                                courseDetail.EndDate,
+                                courseDetail.Id
+                              );
+                if (update)
+                {
+                    TempData["updateStatus"] = true;
+                }
+                else
+                {
+                    TempData["updateStatus"] = false;
+                }
+                return RedirectToAction(nameof(CoursesController.Index), "Courses");
+            }
+            catch (Exception ex)
+            {
+                return Ok(ex.Message);
+            }
+            List<SelectListItem> items = new List<SelectListItem>();
+            var dataCategories = new CategoryQuery().GetAllCategories(null, null);
+            foreach (var category in dataCategories)
+            {
+                items.Add(new SelectListItem
+                {
+                    Value = category.Id.ToString(),
+                    Text = category.Name
+                });
+            }
+            ViewBag.Categories = items;
+            return View(courseDetail);
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            bool delete = new CourseQuery().DeleteCourseById(id);
+            if (delete)
+            {
+                TempData["deleteStatus"] = true;
+            }
+            else
+            {
+                TempData["deleteStatus"] = false;
+            }
+            return RedirectToAction(nameof(CoursesController.Index), "Courses");
         }
     }
 }
