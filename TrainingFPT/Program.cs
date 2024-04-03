@@ -15,10 +15,13 @@ namespace TrainingFPT
             builder.Services.AddDistributedMemoryCache();
             builder.Services.AddSession(options =>
             {
-                options.Cookie.Name = ".AdventureWorks.Session";
                 options.IdleTimeout = TimeSpan.FromSeconds(10);
-                //options.Cookie.HttpOnly = true;
+                options.IOTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.Name = ".MySampleMVCWeb.Session";
+                options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
+                options.Cookie.Path = "/";
+                options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
             });
             builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
